@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header_image{
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container-row-one{
+            display: flex;
+            flex-direction: row;
+            margin-left: 30px;
+            margin-top: 50px; 
+        }
+
+        .container-row-three{
+            display: flex;
+            flex-direction: row;
+            margin-left: 30px;
+            margin-top: 0px; 
+        }
+
+        .container-row-two{
+            display: flex;
+            flex-direction: row;
+            margin-left: 225px;
+            margin-top: 20px;
+        }
+
+        .container-one{
+            background-color: #999999;
+            width: 300px;
+            height: 200px;
+            margin-left: 50px;
+            padding-left: 30px;
+            border-radius: 20px;
+            padding-top: 1px;
+        }
+
+        .dot-green{
+           border-radius: 50%;
+           width: 90px;
+           height: 80px; 
+           padding: 8px;
+
+           background: #6DD0A5;
+
+           color: white;
+           text-align: center;
+
+           font: 58px Arial, sans-serif;
+        }
+        .dot-blue{
+            border-radius: 50%;
+            width: 90px;
+            height: 80px;
+            padding: 8px;
+
+            background: #5448C8;
+
+            color: white;
+            text-align: center;
+
+            font: 58px Arial, sans-serif;
+        }
+
+        span{
+            font-size: 12px;
+        }
+
+        .container-buttom-row{
+            display: flex;
+            flex-direction: row;
+            /* padding-top: 40px; */
+        }
+
+        .vertacal-line{
+            border-left: 2px solid lightgray;
+            height: 20px;
+        }
+
+        .light_button{
+            background-color: #6DD0A5;
+            color: white;
+            height: 30px;
+            width: 55px;
+            border: none;
+            border-radius: 10px;
+            margin-left: 5px;
+        }
+
+        .audio_button{
+            background-color: #6DD0A5;
+            color: white;
+            height: 30px;
+            width: 90px;
+            border: none;
+            border-radius: 10px;
+            margin-left: 5px;  
+        }
+        .brightness { filter: color(#999999); }
+        .add-hr {
+            margin-block-start: -0.9em;
+            margin-inline-start: 34px;
+            margin-inline-end: -45px;
+            opacity: 0.2;
+        }
+
+        .add-hr-1{
+            margin-block-start: -0.9em;
+            margin-inline-start: 34px;
+            margin-inline-end: -45px;
+            opacity: 0.2;
+            margin-top: 5px;
+        }
+
+        /* .horizontal_line{
+            border: 2px solid lightgrey;
+            width: 30px;
+         } */
+        
+    </style>
+    <script>
+        window.onlode = function(){
+            var headers =[ "Air Quality" , "Temperature" , "Audio" , "Display", "Lighting"];
+            var doc_headers = document.querySelectorAll("h1");
+            for(i=0;i<headers.length;i++){
+                doc_headers[i].innerHTML= headers[i];
+            }
+            var avg_airquality = 72,
+                avg_temp = 21,
+                avg_audio = 2,
+                avg_display = 10,
+                avg_lighting = 32,
+                timer= "00:00",
+                total_lighting = 43,
+                total_audio = 5;
+
+            document.getElementById(' avg_airquality ').innerHTML = avg_airquality;
+            document.getElementById('avg_temp').innerHTML = avg_temp + "<span><sup>o<sup></span>";
+            document.getElementById('avg_audio').innerHTML = avg_audio;
+            document.getElementById('avg_display').innerHTML = avg_display + "<span>/16<span>";
+            document.getElementById('avg_lighting').innerHTML = avg_lighting;
+
+            document.getElementsByClassName('audio_button')[0].innerText = "PLAYING";
+            document.getElementsByClassName('light_button')[0].innerText = "ON";
+
+            document.getElementById('total_audio').innerText = total_audio;
+            document.getElementById('total_value').innerText = timer;
+            document.getElementById('total_lighting').innerHTML = total_lighting;
+            
+        }
+    </script>
+</head>
+
+<body>
+<div class="header_image">
+    <img width="215px" height="75px" src="file:///C:/Users/ravik/Downloads/ui_design_resources/logo.svg" >
+</div>
+<div class="container-row-one">
+    <div class="container-one">
+        <h1> Air Quality </h1>
+        <div class="container-buttom-row">
+        <div class="dot-green" ><b>72</b></div>
+        <div class="container-bottom-row">
+            <div style="margin-left: 30px; font-size : 35px;color: gray;"><img width="20px" height="25px"  class="brightness" src="https://www.iconsdb.com/icons/preview/royal-blue/arrow-137-xxl.png">93</div><br>
+            <!--<div class="horizontal_line"></div>--><hr class="add-hr">
+            <div style="margin-left: 30px; font-size : 40px;color: grey;"><img width="20px" height="30px"  src="https://icones.pro/wp-content/uploads/2021/02/icone-de-fleche-vers-le-bas-orange.png">61</div>
+        </div>
+        <!--<div style="margin-left: 30px;font-size: 40px;">61</div>-->
+        </div>
+    </div>
+<div class="container-row-three">
+    <div class="container-one">
+        <h1> Temperature </h1>
+        <div class="container-buttom-row">
+        <div class="dot-blue"><b>21</b><span><sup>O</sup>C</sup></div>
+            <div class="container-bottom-row">
+        <div style="margin-left: 30px; font-size : 35px;">
+            <img align="center" width="20px" height="20px" src="C:\Users\ravik\Downloads\ui_design_resources\fire.svg"><span style="font-size : 35px;color: gray;"><b> 26</b> <span><sup>o</sup>C</span></span></div>
+            <hr class="add-hr-1">
+            <img align="center" style="margin-left: 30px;" width="20px" height="20px" src="C:\Users\ravik\Downloads\ui_design_resources\snowflake.svg"> <span style="font-size : 35px;color: gray;"><b>18</b><span><sup><b>o</sup>C</span></span>
+    </div>
+</div>
+</div>
+</div>
+    <div class="container-one">
+        <h1> Audio </h1>
+        <div class="container-buttom-row">
+        <div style="color: blue; font-size: 60px;">2</div>
+        <button class="audio_button">PLAYING</button>
+        <div style="margin-left: 20px;"><span style="font-size : 15px;color: gray;">Total</span><br> <div style="font-size: 30px;"><span style="font-size : 35px;color: gray;">5</span></div> </div>
+    </div>
+</div>
+</div>
+
+<div class="container-row-two">
+<div class="container-one">
+    <h1> Displays </h1>
+    <div class="container-buttom-row">
+    <div style="color: blue; font-size: 60px;">10<span style="font-size: 20px;"><b>/16</b></span></div>
+    <div style="margin-left: 30px;"><span style="font-size : 15px;color: gray;"> on time<br><div style="font-size: 32px;">00:00</span></div></div>
+</div>
+</div>
+
+<div class="container-one">
+    <h1>Lighting </h1>
+    <div class="container-buttom-row">
+    <div style="color: blue; font-size: 50px;">32</div>
+    <button class="light_button"> ON</button>
+    <div style="margin-left: 10px;"><span style="font-size : 15px;color: gray;"> Total  <br> <div style="font-size: 30px;">43</span></div></div>
+</div>
+</div>
+</div> 
+</body>
+</html>
